@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Wine Quality</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Models
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/decision_tree">Decision Tree</a>
+          <a class="dropdown-item" href="/knn">K-Nearest Neighbors</a>
+          <a class="dropdown-item" href="/LogisticRegression">Logistic Regression</a>
+          <a class="dropdown-item" href="/neural_network">Neural Network</a>
+          <a class="dropdown-item" href="/random_forest">Random Forest</a>
+          <a class="dropdown-item" href="/SVM">Support Vector Machine</a>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+</nav>
+
+
+
+<main class="main">
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard.jpg" alt=""/></figure>
+    <article class="content">
+      <h2 class="section-title">Neural Network Model</h2>
+      <p class="paragraph">We had high hopes for the neural network, however it did not produce results that were as impressive as some of the other algorithms we tried.  We had hoped to improve the results by adding a “stratify” parameter to the train/test/split step. However, we were surprised to find that this reduced the accuracy significantly. One of the difficulties we ran into with this model was the limited range of the scores. Despite having possible scores from 0 to 10, neither the red wine nor the white wine data had scores at the very top end of the range. Not being aware of that when setting the number of output nodes for initially led to error messages. However, we were able to fix the issue once we realized that the model didn’t consider “10” a valid category since no wines had achieved that score. Apparently there are no perfect 10 wines in the vinho verde region.
+        Possible improvements to the models could include adding more nodes or running them for more epochs. 
+        Looking at the confusion matrices below, we see that the while the models don’t predict the exact quality category with a high degree of accuracy, they do still provide useful insights given that when they predict incorrectly, it’s rarely off by more than one.
+        </p>
+      <h3>Red Wine Confusion Matrix</h3>
+      <img src="static/images/red_neural_network_confusion.jpg" alt="red_confusion_matrix"/>
+      <h3>White Wine Confusion Matrix</h3>
+      <img src="static/images/white_neural_network_confusion.jpg" alt="red_confusion_matrix"/>
+    </article>
+  </section>
+
+</main>
+<footer class="footer">Saúde.</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
+</html>

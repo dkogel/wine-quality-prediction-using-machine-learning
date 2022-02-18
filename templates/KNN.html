@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Wine Quality</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Models
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/decision_tree">Decision Tree</a>
+          <a class="dropdown-item" href="/knn">K-Nearest Neighbors</a>
+          <a class="dropdown-item" href="/LogisticRegression">Logistic Regression</a>
+          <a class="dropdown-item" href="/neural_network">Neural Network</a>
+          <a class="dropdown-item" href="/random_forest">Random Forest</a>
+          <a class="dropdown-item" href="/SVM">Support Vector Machine</a>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+</nav>
+
+
+<!-- <header class="header"> 
+  <h1 class="page-title">CSS position sticky parallax effect</h1>
+</header> -->
+<main class="main">
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard.jpg" alt=""/></figure>
+    <article class="content">
+      <h2 class="section-title">K-Nearest Neighbors</h2>
+      <p>K-Nearest Neighbors (KNN) classifies values based on proximity, calculating the distance between points and 
+          assuming similar values are closer together. To find the best vale of K for the model, we tested a range
+          of values and selected the lowest point where the score starts to stabalize. 
+    <br>
+    <p> The red wine test accuracy score reached .583 at its highest. White wine reached .548 accuracy 
+        before stabilizing. The algorithm is slowed down by the multiple qualifiers in the data set, leading to 
+        lower accuracy scores </p>
+        </p>
+        <br>
+      <p>Red Wine KNN Plot</p>
+      <img src="static/images/Red_Wine_KNN_plot.jpg" alt=" Red Wine KNN plot image">
+      <p>The above graph shows the K-Nearest Neighbors plot for the red wine data. We can see the plot start to
+          even out around k=31 with a training score of .601 and testing score of .583. This model accurately predicts 
+        the quality of red wine about 58% of the time, making this an unreliable model. </p>
+      <p>White Wine KNN Plot</p>
+      <img src="static/images/White_Wine_KNN_plot.jpg" alt=" White Wine KNN plot image">
+      <p>The above graph shows the K-Nearest Neighbors plot for the whitewine data. We can see the plot start to
+        even out around k=46 with a training score of .581 and testing score of .548. This model accurately predicts 
+      the quality of red wine about 55% of the time, making this an unreliable model. </p>
+      <br>
+      <p>Red Wine Confusion Matrix</p>
+      <img src="static/images/Red_Wine_KNN_Matrix.jpg" alt=" Red Wine KNN Matrix image">
+      <p>White Wine Confusion Matrix</p>
+      <img src="static/images/White_Wine_KNN_Matrix.jpg" alt=" White Wine KNN Matrix image">
+
+    </article>
+  </section>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Wine Quality</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Models
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/decision_tree">Decision Tree</a>
+          <a class="dropdown-item" href="/knn">K-Nearest Neighbors</a>
+          <a class="dropdown-item" href="/LogisticRegression">Logistic Regression</a>
+          <a class="dropdown-item" href="/neural_network">Neural Network</a>
+          <a class="dropdown-item" href="/random_forest">Random Forest</a>
+          <a class="dropdown-item" href="/SVM">Support Vector Machine</a>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+</nav>
+
+
+<main class="main">
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard.jpg" alt=""/></figure>
+    <article class="content">
+      <h2 class="section-title">Random Forest Model</h2>
+      <p class="paragraph">This was our highest performing algorithm, peaking at about 71 % accuracy for the red wine model and just under 70 %  for the white wine model. Using a cross validation grid search, we were able to improve the accuracy by an additional 1% for both the red model and the white model. After running 8 different grid searches on the red wine model, we did notice that it eventually seemed to be overfitting to the training data as accuracy scores on the test data began to decline. Looking at the most important features in predicting quality, alcohol level was the most important factor for both red and white wines. However, the second most important predictor for red wine was sulphate level. Since sulphates are an additive to preserve wine, this is very useful information for winemakers because it can be directly manipulated. The second most important factor in predicting white wine quality was density. Looking at the confusion matrices below, you can see that both models do a pretty good job of predicting the true label, and that when they predict incorrectly, they’re usually only off by one.   </p>
+      <h3>Red Wine Confusion Matrix</h3>
+      <img src="static/images/red_random_forest_confusion.jpg" alt="red_confusion_matrix"/>
+      <h3>White Wine Confusion Matrix</h3>
+      <img src="static/images/white_random_forest_confusion.jpg" alt="red_confusion_matrix"/>
+    </article>
+  </section>
+
+
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard.jpg" alt=""/></figure>
+    <article class="content">
+      
+      <h2 class = "text-center">Red Wine Quality Predictor</h2>
+      <form action="/form" method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Fixed Acidity</label>
+          <input type="text" class="form-control" value="{{request.form['fixed_acidity'] }}"  name = "fixed_acidity" aria-describedby="emailHelp" placeholder="7.21">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 2.0 - 17.0.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Volatile Acidity</label>
+          <input type="text" class="form-control" value="{{ request.form['volatile_acidity'] }}" name = "volatile_acidity" placeholder="0.34">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 0.05 - 2.0 </small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Citric Acid</label>
+          <input type="text" class="form-control" value="{{ request.form['citric_acid'] }}" name="citric_acid" aria-describedby="emailHelp" placeholder="0.32">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 0 - 2.0</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Residual Sugars</label>
+          <input type="text" class="form-control" value="{{ request.form['residual_sugars'] }}" name="residual_sugars" aria-describedby="emailHelp" placeholder="5.44">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 0 - 70.0</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Chlorides</label>
+          <input type="text" class="form-control" value="{{ request.form['chlorides'] }}" name="chlorides" aria-describedby="emailHelp" placeholder="0.06">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 0 - 1.0</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Free Sulfur Dioxide</label>
+          <input type="text" class="form-control" value="{{ request.form['free_sulfur_dioxide'] }}" name="free_sulfur_dioxide" aria-describedby="emailHelp" placeholder="30.5">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 1.0 - 300.0</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Total Sulfur Dioxide</label>
+          <input type="text" class="form-control" value="{{ request.form['total_sulfur_dioxide'] }}" name="total_sulfur_dioxide" aria-describedby="emailHelp" placeholder="115.7">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 0 - 450.0</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Density</label>
+          <input type="text" class="form-control" value="{{ request.form['density'] }}" name="density" aria-describedby="emailHelp" placeholder="0.99">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 0.75 - 1.10</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">pH</label>
+          <input type="text" class="form-control" value="{{ request.form['pH'] }}" name="pH" aria-describedby="emailHelp" placeholder="3.2">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 0 - 14</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Sulphates</label>
+          <input type="text" class="form-control" value="{{ request.form['sulphates'] }}" name= "sulphates" aria-describedby="emailHelp" placeholder="0.53">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 0 - 2.0</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Alcohol</label>
+          <input type="text" class="form-control" value="{{ request.form['alcohol'] }}" name="alcohol" aria-describedby="emailHelp" placeholder="10.0">
+          <small id="emailHelp" class="form-text text-muted">Insert a number between 5 - 20</small>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit"/>
+
+        {% if result %}
+        <p id = "scroll_true">The predicted wine quality score is {{result}}</p>
+        {% endif %}
+
+        {% if scroll %}
+        <script>
+            document.getElementById('{{ scroll }}').scrollIntoView();
+        </script>
+        {% endif %}
+
+
+      </form>
+    </article>
+  </section>
+
+
+
+
+</main>
+<footer class="footer">Saúde.</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
+</html>

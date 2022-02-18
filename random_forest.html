@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Wine Quality</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <a class="navbar-brand" href="index.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Models
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="decision_tree.html">Decision Tree</a>
+          <a class="dropdown-item" href="KNN.html">K-Nearest Neighbors</a>
+          <a class="dropdown-item" href="LogisticRegression.html">Logistic Regression</a>
+          <a class="dropdown-item" href="neural_network.html">Neural Network</a>
+          <a class="dropdown-item" href="random_forest.html">Random Forest</a>
+          <a class="dropdown-item" href="SVM.html">Support Vector Machine</a>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+</nav>
+
+
+<main class="main">
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard.jpg" alt=""/></figure>
+    <article class="content">
+      <h2 class="section-title">Random Forest Model</h2>
+      <p class="paragraph">This was our highest performing algorithm, peaking at about 71 % accuracy for the red wine model and just under 70 %  for the white wine model. Using a cross validation grid search, we were able to improve the accuracy by an additional 1% for both the red model and the white model. After running 8 different grid searches on the red wine model, we did notice that it eventually seemed to be overfitting to the training data as accuracy scores on the test data began to decline. Looking at the most important features in predicting quality, alcohol level was the most important factor for both red and white wines. However, the second most important predictor for red wine was sulphate level. Since sulphates are an additive to preserve wine, this is very useful information for winemakers because it can be directly manipulated. The second most important factor in predicting white wine quality was density. Looking at the confusion matrices below, you can see that both models do a pretty good job of predicting the true label, and that when they predict incorrectly, they’re usually only off by one.   </p>
+      <h3>Red Wine Confusion Matrix</h3>
+      <img src="static/images/red_random_forest_confusion.jpg" alt="red_confusion_matrix"/>
+      <h3>White Wine Confusion Matrix</h3>
+      <img src="static/images/white_random_forest_confusion.jpg" alt="red_confusion_matrix"/>
+    </article>
+  </section>
+
+
+</main>
+<footer class="footer">Saúde.</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
+</html>

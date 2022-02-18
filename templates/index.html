@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Wine Quality</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Models
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/decision_tree">Decision Tree</a>
+          <a class="dropdown-item" href="/knn">K-Nearest Neighbors</a>
+          <a class="dropdown-item" href="/LogisticRegression">Logistic Regression</a>
+          <a class="dropdown-item" href="/neural_network">Neural Network</a>
+          <a class="dropdown-item" href="/random_forest">Random Forest</a>
+          <a class="dropdown-item" href="/SVM">Support Vector Machine</a>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+</nav>
+
+
+<!-- <header class="header"> 
+  <h1 class="page-title">CSS position sticky parallax effect</h1>
+</header> -->
+<main class="main">
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard.jpg" alt=""/></figure>
+    <article class="content">
+      <h2 class="section-title">Let's get drunk (on machine learning).</h2>
+      <p>Different models of machine learning were employed to potentially predict human wine taste preferences based on measureable, easily attained chemical properties of wine. Using machine learning techniques such as these can potentially be employed to help in the wine-making process and/or marketing process for target consumers.</p>
+    </article>
+  </section>
+
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard2.jpg" alt=""/></figure>
+    <article class="content">
+      <h2 class="section-title">The data.</h2>
+      
+      <p>The datasets we used include chemical property measures commonly used to characterize wine as well as quality scores used for wine certification purposes. The data include measures on samples of vinho verde wine (wine from the northwest region of Portugal). 
+        Because the properties and taste of red and white wine differ, separate datasets were used for red and white wine samples. The red wine dataset included 1599 samples and the white wine dataset included 4898 samples.</p> 
+      <p>Each quality score was the median of at least three scores graded by wine experts who graded each wine sample in a blind taste test on a range from 0 (very bad) to 10 (excellent). 
+        For both the red and white wines most quality scores were given a 5 or 6. Below is a histogram of the quality scores. About 82% of the red wine samples and about 75% of the white wine samples had a quality score of 5 or 6.</p>
+
+      <div class='tableauPlaceholder' id='viz1644883231211' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='WineQualityscores&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1644883231211');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+      <p>The following properties were included in the datasets:</p>
+      <p>fixed acidity (tartaric acid - g / dm^3)</p>
+      <p>volatile acidity (acetic acid - g / dm^3)</p>
+      <p>citric acid (g / dm^3)</p>
+      <p>residual sugar (g / dm^3)</p>
+      <p>chlorides (sodium chloride - g / dm^3</p>
+      <p>free sulfur dioxide (mg / dm^3)</p>
+      <p>total sulfur dioxide (mg / dm^3)</p>
+      <p>density (g / cm^3)</p>
+      <p>pH</p>
+      <p>sulphates (potassium sulphate - g / dm3)</p>
+      <p>alcohol (% by volume)</p>
+      <p>quality (score between 0 and 10)</p>
+      <p>Details about the datasets can be found <a href="https://www.sciencedirect.com/science/article/pii/S0167923609001377" target="_blank">here</a>. The datasets are publicly available and can be downloaded <a href="http://www3.dsi.uminho.pt/pcortez/wine/" target="_blank">here</a>.</p>
+      <p>Source: P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis.
+        Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.</p>
+    </article>
+  </section>
+
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard4.jpg" alt=""/></figure>
+    <article class="content">
+      <h2 class="section-title">The models.</h2>
+      
+      <p>The models used were... After comparing the accuracy scores of the models, it was found that the XXXXX model had the highest accuracy.</p>
+      
+      <table>
+        <tr>
+          <th>Model</th>
+          <th>Red Wine Accuracy</th>
+          <th>White Wine Accuracy</th>
+        </tr>
+        <tr>
+         <td>Decision Tree</td>
+          <td>0.598</td>
+          <td>0.596</td>
+        </tr>
+        <tr>
+
+          <td>K-Nearest Neighbors</td>
+
+          <td>0.583</td>
+          <td>0.548</td>
+        </tr>
+        <tr>
+          <td>Logistic Regression</td>
+          <td>0.585</td>
+          <td>0.532</td>
+        </tr>
+        <tr>
+          <td>Neural Network</td>
+          <td>0.640</td>
+          <td>0.5578</td>
+        </tr>
+        <tr>
+          <td>Random Forest</td>
+          <td>0.713</td>
+          <td>0.688</td>
+        </tr>
+        <tr>
+          <td>Support Vector Machine</td>
+          <td>0.588</td>
+          <td>0.514</td>
+        </tr>
+      </table>
+    
+    </article>
+  </section>
+</main>
+<footer class="footer">Saúde.</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
+</html>

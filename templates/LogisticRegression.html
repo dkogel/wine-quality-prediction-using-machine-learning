@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Learning Wine Quality</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Models
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/decision_tree">Decision Tree</a>
+          <a class="dropdown-item" href="/knn">K-Nearest Neighbors</a>
+          <a class="dropdown-item" href="/LogisticRegression">Logistic Regression</a>
+          <a class="dropdown-item" href="/neural_network">Neural Network</a>
+          <a class="dropdown-item" href="/random_forest">Random Forest</a>
+          <a class="dropdown-item" href="/SVM">Support Vector Machine</a>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+</nav>
+
+
+<!-- <header class="header"> 
+  <h1 class="page-title">CSS position sticky parallax effect</h1>
+</header> -->
+<main class="main">
+  <section class="section">
+    <figure class="image-container"><img src="static/images/vineyard.jpg" alt=""/></figure>
+    <article class="content">
+      <h2 class="section-title">Logistic Regression</h2>
+      <p>Logistic regression is used to find binary outcomes from a data set, using a function to determine
+          a probability value of 0 or 1. Using the wine data sets, we hoped to see the probability of predicting
+        quality or low quality wine. </p>
+      <p> The logistic regression showed an red wine accuracy score of .585 and a 
+          white wine accuracy score of .532. The dataset includes multiple elements that impact the quality
+        score of the wine, this model predicts a set of classes or categories. The quality of wine is not a binary
+    outcome, making it difficult to fin</p>
+      <br>
+      <p>Red Wine Confusion Matrix</p>
+      <img src="static/images/Red_Wine_Logistic_Regression_Matrix.jpg" alt=" Red Wine Logistic Regression Matrix image">
+      <p>White Wine Confusion Matrix</p>
+      <img src="static/images/White_Wine_Logistic_Regression_Matrix.jpg" alt=" White Wine Logistic Regression Matrix image">
+
+    </article>
+  </section>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+
+</html>
